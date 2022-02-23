@@ -155,10 +155,16 @@ const deleteLetter = () => {
 
 const checkRow = () => {
   const guess = guessRows[currentRow].join('');
+  console.log('guess', guess);
+  console.log('wordle', wordle);
 
   if (currentTile === 5) {
-    console.log('guess', guess);
-    console.log('wordle', wordle);
+    fetch(`http://localhost:8000/check/?word=${guess}`)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+      });
+
     flipTile();
 
     if (wordle === guess) {
