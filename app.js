@@ -101,23 +101,23 @@ getWordle();
 /////////////////////////////////////
 // Handle letter input
 const handleClick = (key) => {
-  console.log('clicked', key); //temp
+  if (!isGameOver) {
+    // Delete letter
+    if (key === '«') {
+      deleteLetter();
+      console.log('guessRows', guessRows);
+      return;
+    }
 
-  // Delete letter
-  if (key === '«') {
-    deleteLetter();
-    console.log('guessRows', guessRows);
-    return;
+    // Check letter
+    if (key === 'ENTER') {
+      checkRow();
+      console.log('guessRows', guessRows);
+      return;
+    }
+
+    addLetter(key);
   }
-
-  // Check letter
-  if (key === 'ENTER') {
-    checkRow();
-    console.log('guessRows', guessRows);
-    return;
-  }
-
-  addLetter(key);
 };
 
 const addLetter = (letter) => {
@@ -155,36 +155,40 @@ const deleteLetter = () => {
 
 const checkRow = () => {
   const guess = guessRows[currentRow].join('');
-  console.log('guess', guess);
-  console.log('wordle', wordle);
+  // console.log('guess', guess);
+  // console.log('wordle', wordle);
 
   if (currentTile === 5) {
     fetch(`http://localhost:8000/check/?word=${guess}`)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
-      });
+        if (json == 'Entry word not found') {
+          showMessage('Please enter a valid word');
+          return;
+        } else {
+          flipTile();
 
-    flipTile();
+          if (wordle === guess) {
+            showMessage('🔥🔥🔥 You got it! 🔥🔥🔥');
+            isGameOver = true;
+            return;
+          } else {
+            // Last row/guess
+            if (currentRow >= 5) {
+              showMessage('Game Over');
+              isGameOver = true;
+              return;
+            }
 
-    if (wordle === guess) {
-      showMessage('🔥🔥🔥YAY!🔥🔥🔥');
-      isGameOver = true;
-      return;
-    } else {
-      // Last row/guess
-      if (currentRow >= 5) {
-        showMessage('Game Over');
-        isGameOver = true;
-        return;
-      }
-
-      // More guesses available
-      if (currentRow < 5) {
-        currentRow++;
-        currentTile = 0;
-      }
-    }
+            // More guesses available
+            if (currentRow < 5) {
+              currentRow++;
+              currentTile = 0;
+            }
+          }
+        }
+      })
+      .catch((err) => console.log(err));
   }
 };
 
