@@ -69,6 +69,19 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 // HANDLE LETTER INPUT
 const handleClick = (key) => {
   console.log('clicked', key); //temp
+
+  // Delete letter
+  if (key === '«') {
+    console.log('delete letter');
+    return;
+  }
+
+  // Check letter
+  if (key === 'ENTER') {
+    console.log('check row');
+    return;
+  }
+
   addLetter(key);
 };
 
