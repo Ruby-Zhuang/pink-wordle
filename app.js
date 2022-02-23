@@ -197,8 +197,8 @@ const showMessage = (message) => {
   messageElement.textContent = message;
   messageDisplay.append(messageElement);
 
-  // Remove message after 2 seconds
-  setTimeout(() => messageDisplay.removeChild(messageElement), 2000);
+  // Remove message after 5 seconds
+  setTimeout(() => messageDisplay.removeChild(messageElement), 5000);
 };
 
 const addColorToKey = (keyLetter, color) => {
