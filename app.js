@@ -66,19 +66,31 @@ guessRows.forEach((guessRow, guessRowIndex) => {
   tileDisplay.append(rowElement);
 });
 
-// KEYBOARD
+// HANDLE LETTER INPUT
 const handleClick = (key) => {
   console.log('clicked', key); //temp
   addLetter(key);
 };
 
 const addLetter = (letter) => {
-  const tile = document.getElementById(
-    `guessRow-${currentRow}-tile-${currentTile}`
-  );
-  tile.textContent = letter;
+  if (currentTile < 5 && currentRow < 6) {
+    // Add letter to UI
+    const tile = document.getElementById(
+      `guessRow-${currentRow}-tile-${currentTile}`
+    );
+    tile.textContent = letter;
+
+    // Store letter
+    guessRows[currentRow][currentTile] = letter;
+
+    // For colouring letters/tiles
+    tile.setAttribute('data', letter);
+
+    // Move to next letter
+    currentTile++;
 };
 
+// KEYBOARD
 keys.forEach((key) => {
   const buttonElement = document.createElement('button');
   buttonElement.textContent = key;
