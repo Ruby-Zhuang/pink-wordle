@@ -62,15 +62,15 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 });
 
 // KEYBOARD
-const handleClick = () => {
-  console.log('clicked'); //temp
+const handleClick = (key) => {
+  console.log('clicked', key); //temp
 };
 
 keys.forEach((key) => {
   const buttonElement = document.createElement('button');
   buttonElement.textContent = key;
   buttonElement.setAttribute('id', key);
-  buttonElement.addEventListener('click', handleClick);
+  buttonElement.addEventListener('click', () => handleClick(key));
 
   keyboard.append(buttonElement);
 });
