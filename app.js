@@ -88,6 +88,7 @@ const addLetter = (letter) => {
 
     // Move to next letter
     currentTile++;
+  }
 };
 
 // KEYBOARD
