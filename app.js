@@ -54,6 +54,7 @@ guessRows.forEach((guessRow, guessRowIndex) => {
       'id',
       `guessRow-${guessRowIndex}-tile-${guessIndex}`
     );
+    tileElement.classList.add('tile');
     rowElement.append(tileElement);
   });
 
