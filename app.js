@@ -90,13 +90,15 @@ const handleClick = (key) => {
 
   // Delete letter
   if (key === '«') {
-    console.log('delete letter');
+    deleteLetter();
+    console.log('guessRows', guessRows);
     return;
   }
 
   // Check letter
   if (key === 'ENTER') {
     console.log('check row');
+    console.log('guessRows', guessRows);
     return;
   }
 
@@ -119,5 +121,19 @@ const addLetter = (letter) => {
 
     // Move to next letter
     currentTile++;
+  }
+};
+
+const deleteLetter = () => {
+  if (currentTile > 0) {
+    currentTile--;
+    const tile = document.getElementById(
+      `guessRow-${currentRow}-tile-${currentTile}`
+    );
+
+    // Reset
+    tile.textContent = '';
+    guessRows[currentRow][currentTile] = '';
+    tile.setAttribute('data', '');
   }
 };
