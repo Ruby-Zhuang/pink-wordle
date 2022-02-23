@@ -183,12 +183,14 @@ const flipTile = () => {
   rowTiles.forEach((tile, index) => {
     const dataLetter = tile.getAttribute('data');
 
-    if (dataLetter === wordle[index]) {
-      tile.classList.add('green-overlay');
-    } else if (wordle.includes(dataLetter)) {
-      tile.classList.add('yellow-overlay');
-    } else {
-      tile.classList.add('grey-overlay');
-    }
+    setTimeout(() => {
+      if (dataLetter === wordle[index]) {
+        tile.classList.add('green-overlay');
+      } else if (wordle.includes(dataLetter)) {
+        tile.classList.add('yellow-overlay');
+      } else {
+        tile.classList.add('grey-overlay');
+      }
+    }, 500 * index);
   });
 };
