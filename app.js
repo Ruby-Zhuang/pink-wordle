@@ -145,6 +145,7 @@ const checkRow = () => {
   if (currentTile === 5) {
     console.log('guess', guess);
     console.log('wordle', wordle);
+    flipTile();
 
     if (wordle === guess) {
       showMessage('🔥🔥🔥YAY!🔥🔥🔥');
@@ -174,4 +175,20 @@ const showMessage = (message) => {
 
   // Remove message after 2 seconds
   setTimeout(() => messageDisplay.removeChild(messageElement), 2000);
+};
+
+const flipTile = () => {
+  const rowTiles = document.getElementById(`guessRow-${currentRow}`).childNodes;
+
+  rowTiles.forEach((tile, index) => {
+    const dataLetter = tile.getAttribute('data');
+
+    if (dataLetter === wordle[index]) {
+      tile.classList.add('green-overlay');
+    } else if (wordle.includes(dataLetter)) {
+      tile.classList.add('yellow-overlay');
+    } else {
+      tile.classList.add('grey-overlay');
+    }
+  });
 };
