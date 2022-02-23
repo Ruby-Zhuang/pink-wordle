@@ -3,6 +3,7 @@ const tileDisplay = document.querySelector('.tile-container');
 const keyboard = document.querySelector('.key-container');
 const messageDisplay = document.querySelector('.message-container');
 
+// SETUP
 const keys = [
   'Q',
   'W',
@@ -43,6 +44,10 @@ const guessRows = [
   ['', '', '', '', ''],
 ];
 
+let wordle = 'SUPER'; //hard-coded for now
+let currentRow = 0;
+let currentTile = 0;
+
 // GUESS ROWS/TILES
 guessRows.forEach((guessRow, guessRowIndex) => {
   const rowElement = document.createElement('div');
@@ -64,6 +69,14 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 // KEYBOARD
 const handleClick = (key) => {
   console.log('clicked', key); //temp
+  addLetter(key);
+};
+
+const addLetter = (letter) => {
+  const tile = document.getElementById(
+    `guessRow-${currentRow}-tile-${currentTile}`
+  );
+  tile.textContent = letter;
 };
 
 keys.forEach((key) => {
