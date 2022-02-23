@@ -7,6 +7,8 @@ const app = express();
 
 app.use(cors());
 
+app.use(express.static('public'));
+
 app.get('/word', (req, res) => {
   const options = {
     method: 'GET',
