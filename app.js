@@ -97,7 +97,7 @@ const handleClick = (key) => {
 
   // Check letter
   if (key === 'ENTER') {
-    console.log('check row');
+    checkRow();
     console.log('guessRows', guessRows);
     return;
   }
@@ -136,4 +136,23 @@ const deleteLetter = () => {
     guessRows[currentRow][currentTile] = '';
     tile.setAttribute('data', '');
   }
+};
+
+const checkRow = () => {
+  const guess = guessRows[currentRow].join('');
+
+  if (currentTile === 5) {
+    console.log('guess', guess);
+    console.log('wordle', wordle);
+
+    if (wordle === guess) {
+      showMessage('🔥🔥🔥YAY!🔥🔥🔥');
+    }
+  }
+};
+
+const showMessage = (message) => {
+  const messageElement = document.createElement('p');
+  messageElement.textContent = message;
+  messageDisplay.append(messageElement);
 };
