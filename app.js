@@ -83,6 +83,7 @@ keys.forEach((key) => {
 let wordle = 'SUPER'; //hard-coded for now
 let currentRow = 0;
 let currentTile = 0;
+let isGameOver = false;
 
 // Handle letter input
 const handleClick = (key) => {
@@ -147,6 +148,21 @@ const checkRow = () => {
 
     if (wordle === guess) {
       showMessage('🔥🔥🔥YAY!🔥🔥🔥');
+      isGameOver = true;
+      return;
+    } else {
+      // Last row/guess
+      if (currentRow >= 5) {
+        showMessage('Game Over');
+        isGameOver = true;
+        return;
+      }
+
+      // More guesses available
+      if (currentRow < 5) {
+        currentRow++;
+        currentTile = 0;
+      }
     }
   }
 };
