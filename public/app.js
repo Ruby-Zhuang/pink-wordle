@@ -105,14 +105,14 @@ const handleClick = (key) => {
     // Delete letter
     if (key === '«') {
       deleteLetter();
-      console.log('guessRows', guessRows);
+      // console.log('guessRows', guessRows);
       return;
     }
 
     // Check letter
     if (key === 'ENTER') {
       checkRow();
-      console.log('guessRows', guessRows);
+      // console.log('guessRows', guessRows);
       return;
     }
 
