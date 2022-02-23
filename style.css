@@ -41,3 +41,9 @@ body {
   background-color: #818384;
   margin: 4px;
 }
+
+/* Enter and << keys */
+.key-container button:nth-child(20),
+.key-container button:nth-child(28) {
+  width: 68px;
+}
