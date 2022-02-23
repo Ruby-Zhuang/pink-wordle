@@ -80,11 +80,25 @@ keys.forEach((key) => {
 /////////////////////////////////////
 // INITIALIZE GAME START
 /////////////////////////////////////
-let wordle = 'SUPER'; //hard-coded for now
+let wordle;
 let currentRow = 0;
 let currentTile = 0;
 let isGameOver = false;
 
+const getWordle = () => {
+  fetch('http://localhost:8000/word')
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      wordle = json.toUpperCase();
+    })
+    .catch((err) => console.log(err));
+};
+getWordle();
+
+/////////////////////////////////////
+// GAME FUNCTIONS
+/////////////////////////////////////
 // Handle letter input
 const handleClick = (key) => {
   console.log('clicked', key); //temp
