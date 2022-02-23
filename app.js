@@ -34,6 +34,10 @@ const keys = [
   '«',
 ];
 
+const handleClick = () => {
+  console.log('clicked'); //temp
+};
+
 // Add keyboard buttons
 keys.forEach((key) => {
   const buttonElement = document.createElement('button');
@@ -43,7 +47,3 @@ keys.forEach((key) => {
 
   keyboard.append(buttonElement);
 });
-
-const handleClick = () => {
-  console.log('clicked'); //temp
-};
