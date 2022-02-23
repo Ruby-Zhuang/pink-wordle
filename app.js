@@ -155,4 +155,7 @@ const showMessage = (message) => {
   const messageElement = document.createElement('p');
   messageElement.textContent = message;
   messageDisplay.append(messageElement);
+
+  // Remove message after 2 seconds
+  setTimeout(() => messageDisplay.removeChild(messageElement), 2000);
 };
