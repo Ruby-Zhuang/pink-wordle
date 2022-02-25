@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 
+// use the express-static middleware
 app.use(express.static('public'));
 
 app.get('/word', (req, res) => {
