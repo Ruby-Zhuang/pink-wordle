@@ -179,7 +179,7 @@ const checkRow = () => {
       .then((response) => response.json())
       .then((json) => {
         if (json == 'Entry word not found') {
-          showMessage('Please enter a valid word');
+          showMessage('🤪🤪🤪 Invalid Word 🤪🤪🤪');
           return;
         } else {
           flipTile();
@@ -191,7 +191,7 @@ const checkRow = () => {
           } else {
             // Last row/guess
             if (currentRow >= 5) {
-              showMessage('Game Over');
+              showMessage('🥺🥺🥺 Game Over 🥺🥺🥺');
               isGameOver = true;
               return;
             }
