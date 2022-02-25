@@ -43,10 +43,14 @@ body {
   margin: 4px;
 }
 
-/* Enter and << keys */
-.key-container button:nth-child(20),
+/* Enter and Backspace keys */
+.key-container button:nth-child(20) {
+  width: 68px;
+}
+
 .key-container button:nth-child(28) {
   width: 68px;
+  font-size: 1.25rem;
 }
 
 .tile-container div {
