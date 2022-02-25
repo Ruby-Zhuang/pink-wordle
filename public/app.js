@@ -80,7 +80,7 @@ keys.forEach((key) => {
 /////////////////////////////////////
 // INITIALIZE GAME START
 /////////////////////////////////////
-let wordle;
+let wordle = 'SUPER';
 let currentRow = 0;
 let currentTile = 0;
 let isGameOver = false;
