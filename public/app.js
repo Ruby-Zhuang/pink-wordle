@@ -121,6 +121,7 @@ let wordle = 'SUPER';
 let currentRow = 0;
 let currentTile = 0;
 let isGameOver = false;
+let messageTimeoutId;
 
 const getWordle = () => {
   fetch('http://localhost:8000/word')
@@ -178,6 +179,8 @@ const checkRow = () => {
     fetch(`http://localhost:8000/check/?word=${guess}`)
       .then((response) => response.json())
       .then((json) => {
+        resetMessage();
+
         if (json == 'Entry word not found') {
           showMessage('🤪🤪🤪 Invalid Word 🤪🤪🤪');
           return;
@@ -208,13 +211,22 @@ const checkRow = () => {
   }
 };
 
+const resetMessage = () => {
+  messageDisplay.innerHTML = '';
+  clearTimeout(messageTimeoutId);
+};
+
 const showMessage = (message) => {
+  resetMessage();
   const messageElement = document.createElement('p');
   messageElement.textContent = message;
   messageDisplay.append(messageElement);
 
   // Remove message after 5 seconds
-  setTimeout(() => messageDisplay.removeChild(messageElement), 5000);
+  messageTimeoutId = setTimeout(
+    () => messageDisplay.removeChild(messageElement),
+    5000
+  );
 };
 
 const addColorToKey = (keyLetter, color) => {
