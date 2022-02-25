@@ -48,6 +48,27 @@ const guessRows = [
 /////////////////////////////////////
 // EVENT HANDLERS
 /////////////////////////////////////
+// Handle letter input
+const handleLetter = (key) => {
+  if (!isGameOver) {
+    // Delete letter
+    if (key === '⌫') {
+      deleteLetter();
+      // console.log('guessRows', guessRows);
+      return;
+    }
+
+    // Check letter
+    if (key === 'ENTER') {
+      checkRow();
+      // console.log('guessRows', guessRows);
+      return;
+    }
+
+    addLetter(key);
+  }
+};
+
 const handleKeypress = (event) => {
   let key = event.key.toUpperCase();
 
@@ -86,7 +107,7 @@ keys.forEach((key) => {
   const buttonElement = document.createElement('button');
   buttonElement.textContent = key;
   buttonElement.setAttribute('id', key);
-  buttonElement.addEventListener('click', () => handleClick(key));
+  buttonElement.addEventListener('click', () => handleLetter(key));
 
   keyboard.append(buttonElement);
 });
@@ -115,27 +136,6 @@ getWordle();
 /////////////////////////////////////
 // GAME FUNCTIONS
 /////////////////////////////////////
-// Handle letter input
-const handleClick = (key) => {
-  if (!isGameOver) {
-    // Delete letter
-    if (key === '«') {
-      deleteLetter();
-      // console.log('guessRows', guessRows);
-      return;
-    }
-
-    // Check letter
-    if (key === 'ENTER') {
-      checkRow();
-      // console.log('guessRows', guessRows);
-      return;
-    }
-
-    addLetter(key);
-  }
-};
-
 const addLetter = (letter) => {
   if (currentTile < 5 && currentRow < 6) {
     // Add letter to UI
