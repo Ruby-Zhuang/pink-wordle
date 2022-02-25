@@ -124,7 +124,7 @@ let isGameOver = false;
 let messageTimeoutId;
 
 const getWordle = () => {
-  fetch('http://localhost:8000/word')
+  fetch('/word')
     .then((response) => response.json())
     .then((json) => {
       // console.log(json);
@@ -176,7 +176,7 @@ const checkRow = () => {
   // console.log('wordle', wordle);
 
   if (currentTile === 5) {
-    fetch(`http://localhost:8000/check/?word=${guess}`)
+    fetch(`/check/?word=${guess}`)
       .then((response) => response.json())
       .then((json) => {
         resetMessage();
