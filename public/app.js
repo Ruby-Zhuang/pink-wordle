@@ -46,6 +46,20 @@ const guessRows = [
 ];
 
 /////////////////////////////////////
+// EVENT HANDLERS
+/////////////////////////////////////
+const handleKeypress = (event) => {
+  let key = event.key.toUpperCase();
+
+  if (key === 'BACKSPACE') {
+    key = '⌫';
+  }
+
+  if (keys.includes(key)) {
+    handleLetter(key);
+  }
+};
+/////////////////////////////////////
 // CREATE DOM GAME ELEMENTS
 /////////////////////////////////////
 
@@ -76,6 +90,8 @@ keys.forEach((key) => {
 
   keyboard.append(buttonElement);
 });
+
+document.addEventListener('keydown', handleKeypress);
 
 /////////////////////////////////////
 // INITIALIZE GAME START
