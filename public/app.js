@@ -194,7 +194,7 @@ const checkRow = () => {
           } else {
             // Last row/guess
             if (currentRow >= 5) {
-              showMessage('🥺🥺🥺 Game Over 🥺🥺🥺');
+              showMessage(`🥺🥺🥺 Game Over. It was ${wordle}! 🥺🥺🥺`);
               isGameOver = true;
               return;
             }
