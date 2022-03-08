@@ -242,7 +242,7 @@ const flipTile = () => {
   rowTiles.forEach((tile) => {
     guess.push({
       letter: tile.getAttribute('data'),
-      color: 'grey-overlay',
+      color: 'pink-overlay',
     });
   });
 
