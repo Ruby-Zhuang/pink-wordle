@@ -8,7 +8,8 @@
   --green: #b0eb92;
 
   /* Game Variables */
-  --game-max-width: 510px;
+  --game-max-width: 530px;
+  --tile-row-max-width: 330px;
 }
 
 * {
@@ -37,6 +38,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  padding: 0.5em;
   max-width: var(--game-max-width);
   display: flex;
   flex-direction: column;
@@ -78,6 +80,8 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
+  width: 100%;
+  max-width: var(--tile-row-max-width);
 }
 
 .key-container {
@@ -108,11 +112,12 @@ body {
 
 .tile-container div {
   display: flex;
+  width: 100%;
 }
 
 .tile-container .tile {
-  width: 62px;
   height: 62px;
+  flex: 1;
   border: 2px solid var(--light-pink);
   box-sizing: border-box;
   display: flex;
