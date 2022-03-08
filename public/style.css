@@ -34,6 +34,7 @@ body {
 
 .game-container {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   max-width: var(--game-max-width);
   display: flex;
@@ -56,9 +57,23 @@ body {
   height: 40px;
 }
 
+.message-container {
+  height: 45px;
+  margin: 0.5em;
+}
+
+.message-container p {
+  background-color: var(--dark-pink);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+}
+
 .tile-container {
-  width: 330px;
-  margin-bottom: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
 }
 
 .key-container {
@@ -100,17 +115,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: 2px;
-}
-
-.message-container {
-  height: 40px;
-}
-
-.message-container p {
-  background-color: var(--dark-pink);
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0;
 }
 
 .tile.flip {
