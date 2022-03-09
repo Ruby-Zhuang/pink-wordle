@@ -19,7 +19,6 @@ const guessRows = [
 /////////////////////////////////////
 // Handle letter input
 const handleLetter = (letter) => {
-  console.log(letter);
   let key = letter.toUpperCase();
 
   if (!isGameOver) {
