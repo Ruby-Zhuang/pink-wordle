@@ -4,8 +4,8 @@
   --light-pink: #ffd0d6;
   --pink: #ffb7c0;
   --dark-pink: #ff9daa;
-  --yellow: #ffcc66;
-  --green: #b0eb92;
+  --present-letter: #ffcc66;
+  --correct-letter: #b0eb92;
 
   /* Game Variables */
   --game-max-width: 530px;
@@ -143,19 +143,19 @@ body {
 }
 
 /* Tile colours */
-.pink-overlay {
+.absent-overlay {
   background-color: var(--light-pink) !important;
   border: none !important;
 }
 
-.yellow-overlay {
-  background-color: var(--yellow) !important;
+.present-overlay {
+  background-color: var(--present-letter) !important;
   border: none !important;
 }
 
 /* Green last for importance and to override any other styles*/
-.green-overlay {
-  background-color: var(--green) !important;
+.correct-overlay {
+  background-color: var(--correct-letter) !important;
   border: none !important;
 }
 

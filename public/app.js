@@ -242,14 +242,14 @@ const flipTile = () => {
   rowTiles.forEach((tile) => {
     guess.push({
       letter: tile.getAttribute('data'),
-      color: 'pink-overlay',
+      color: 'absent-overlay',
     });
   });
 
   // Check for exact letter and position match
   guess.forEach((guess, index) => {
     if (guess.letter === wordle[index]) {
-      guess.color = 'green-overlay';
+      guess.color = 'correct-overlay';
       checkWordle = checkWordle.replace(guess.letter, ''); // Remove letter from checkWordle
     }
   });
@@ -257,7 +257,7 @@ const flipTile = () => {
   // Check whether letter exists (but not in correct position)
   guess.forEach((guess) => {
     if (checkWordle.includes(guess.letter)) {
-      guess.color = 'yellow-overlay';
+      guess.color = 'present-overlay';
       checkWordle = checkWordle.replace(guess.letter, ''); // Remove letter from checkWordle
     }
   });
