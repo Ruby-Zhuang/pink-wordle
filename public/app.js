@@ -2,39 +2,8 @@
 // SETUP
 /////////////////////////////////////
 const tileDisplay = document.querySelector('.tile-container');
-const keyboard = document.querySelector('.key-container');
+const keys = document.querySelectorAll('.key-container .key');
 const messageDisplay = document.querySelector('.message-container');
-
-const keys = [
-  'Q',
-  'W',
-  'E',
-  'R',
-  'T',
-  'Y',
-  'U',
-  'I',
-  'O',
-  'P',
-  'A',
-  'S',
-  'D',
-  'F',
-  'G',
-  'H',
-  'J',
-  'K',
-  'L',
-  'ENTER',
-  'Z',
-  'X',
-  'C',
-  'V',
-  'B',
-  'N',
-  'M',
-  '⌫',
-];
 
 const guessRows = [
   ['', '', '', '', ''],
@@ -49,10 +18,13 @@ const guessRows = [
 // EVENT HANDLERS
 /////////////////////////////////////
 // Handle letter input
-const handleLetter = (key) => {
+const handleLetter = (letter) => {
+  console.log(letter);
+  let key = letter.toUpperCase();
+
   if (!isGameOver) {
     // Delete letter
-    if (key === '⌫') {
+    if (key === '⌫' || key === 'BACKSPACE') {
       deleteLetter();
       // console.log('guessRows', guessRows);
       return;
@@ -70,15 +42,23 @@ const handleLetter = (key) => {
 };
 
 const handleKeypress = (event) => {
-  let key = event.key.toUpperCase();
+  let pressedKey = event.key.toUpperCase();
 
-  if (key === 'BACKSPACE') {
-    key = '⌫';
-  }
+  let found = pressedKey.match(/[a-z]/gi);
 
-  if (keys.includes(key)) {
-    handleLetter(key);
+  let validInput =
+    pressedKey === 'BACKSPACE' ||
+    pressedKey === 'ENTER' ||
+    (found && found.length <= 1); // check that the key we pressed was an alphabetical key representing a single letter i.e. doesn't have multiple letters (Shift, Tab)
+
+  if (validInput) {
+    handleLetter(pressedKey);
   }
+};
+
+const handleClick = (event) => {
+  let clickedKey = event.target.textContent;
+  handleLetter(clickedKey);
 };
 /////////////////////////////////////
 // CREATE DOM GAME ELEMENTS
@@ -102,17 +82,17 @@ guessRows.forEach((guessRow, guessRowIndex) => {
   tileDisplay.append(rowElement);
 });
 
-// Keyboard Buttons
-keys.forEach((key) => {
-  const buttonElement = document.createElement('button');
-  buttonElement.textContent = key;
-  buttonElement.setAttribute('id', key);
-  buttonElement.addEventListener('click', () => handleLetter(key));
-
-  keyboard.append(buttonElement);
-});
-
+/////////////////////////////////////
+// EVENT LISTENERS
+/////////////////////////////////////
+// Keyboard Input
 document.addEventListener('keydown', handleKeypress);
+
+// Mouse Click Input
+keys.forEach((key) => {
+  let letter = key.textContent;
+  key.addEventListener('click', () => handleLetter(letter));
+});
 
 /////////////////////////////////////
 // INITIALIZE GAME START
