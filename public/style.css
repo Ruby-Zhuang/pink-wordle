@@ -87,27 +87,41 @@ body {
 .key-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.key-container button {
-  width: 43px;
+.key-container .row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+.key-container .key {
   height: 58px;
   border-radius: 4px;
   border: none;
   background-color: var(--dark-pink);
-  margin: 4px;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  flex: 1;
 }
 
-/* Enter and Backspace keys */
-.key-container button:nth-child(20) {
-  width: 68px;
+.key-container .key:last-of-type {
+  margin: 0;
 }
 
-.key-container button:nth-child(28) {
-  width: 68px;
-  font-size: 1.25rem;
+.key-container .spacer.half {
+  flex: 0.5;
+}
+
+.key-container .key.one-and-a-half {
+  flex: 1.5;
 }
 
 .tile-container div {
@@ -124,6 +138,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 2px;
+  text-transform: uppercase;
 }
 
 .tile.flip {
