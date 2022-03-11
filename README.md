@@ -12,12 +12,11 @@ Followed tutorial by [Ania Kubów](https://www.youtube.com/watch?v=mpby4HiElek)!
 - Each guess must be a valid 5-letter word
 - After each guess, tiles will change colour depending on how accurate the guess was
 
-  - **Green:** letter is in the word and in the correct position
-    ![Correct Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/green_letter.png)
-  - **Yellow:** letter is in the word but in the wrong position
-    ![Present Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/yellow_letter.png)
-  - **Pink:** letter is not in word
-    ![Absent Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/pink_letter.png)
+| Colour     | Letter Accuracy                                   | Example                                                                                         |
+| ---------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Green**  | Letter is in the word and in the correct position | ![Correct Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/green_letter.png)  |
+| **Yellow** | Letter is in the word and in the wrong position   | ![Present Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/yellow_letter.png) |
+| **Pink**   | Letter is not in word                             | ![Absent Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/pink_letter.png)    |
 
 ## APIs
 
