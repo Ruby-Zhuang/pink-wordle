@@ -6,6 +6,12 @@ Check out the 👉 [deployed website here!](https://pink-wordle.herokuapp.com/) 
 
 ## Final Product
 
+Winning Game
+![Win](https://github.com/Ruby-Zhuang/pink-wordle/blob/main/docs/Win.gif)
+
+Losing Game
+![Lost](https://github.com/Ruby-Zhuang/pink-wordle/blob/main/docs/Lose.gif)
+
 ## How To Play
 
 - The goal is to guess the correct 5-letter word in 6 attempts
