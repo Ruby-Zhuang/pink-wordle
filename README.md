@@ -29,7 +29,7 @@ Check out the 👉 [deployed website here!](https://pink-wordle.herokuapp.com/) 
 ## Getting Started
 
 1. Install all dependencies with `npm install`
-2. Start the web server with `npm run nodemon`
+2. Start the web server with `npm run start` or `npm run nodemon`
 3. Go to http://localhost:8000 in your browser
 
 ## Credits
