@@ -1,8 +1,8 @@
-# Pink Wordle
+# Pink Wordle :cherry_blossom:
 
-Pink Wordle is a clone of the popular online [WORDLE](https://www.nytimes.com/games/wordle/index.html) game (but in pink).
+Pink Wordle is a clone of the popular online [WORDLE](https://www.nytimes.com/games/wordle/index.html) game (but in pink)!
 
-Followed tutorial by [Ania Kubów](https://www.youtube.com/watch?v=mpby4HiElek)!
+Check out the 👉 [deployed website here!](https://pink-wordle.herokuapp.com/) 👈
 
 ## Final Product
 
@@ -31,3 +31,7 @@ Followed tutorial by [Ania Kubów](https://www.youtube.com/watch?v=mpby4HiElek)!
 1. Install all dependencies with `npm install`
 2. Start the web server with `npm run nodemon`
 3. Go to http://localhost:8000 in your browser
+
+## Credits
+
+Followed tutorial by 👉 [Ania Kubów!](https://www.youtube.com/watch?v=mpby4HiElek) 👈
