@@ -26,8 +26,8 @@ Losing Game
 
 ## APIs Used
 
-- [Random Word API](https://rapidapi.com/sheharyar566/api/random-words5)
-- [Dictionary API](https://rapidapi.com/twinword/api/word-dictionary)
+- [Random Word API](https://rapidapi.com/sheharyar566/api/random-words5): provides random words
+- [Dictionary API](https://rapidapi.com/twinword/api/word-dictionary): checks whether a word is valid
 
 ## Dependencies
 
