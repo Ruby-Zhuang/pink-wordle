@@ -25,6 +25,8 @@ Losing Game
 | **Pink**   | Letter is not in word                             | ![Absent Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/pink_letter.png)    |
 
 ## APIs
+[Random Word API](https://rapidapi.com/sheharyar566/api/random-words5)
+[Dictionary API](https://rapidapi.com/twinword/api/word-dictionary)
 
 ## Dependencies
 
