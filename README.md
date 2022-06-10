@@ -24,9 +24,10 @@ Losing Game
 | **Yellow** | Letter is in the word but in the wrong position   | ![Present Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/yellow_letter.png) |
 | **Pink**   | Letter is not in word                             | ![Absent Letter](https://github.com/Ruby-Zhuang/wordle-clone/blob/main/docs/pink_letter.png)    |
 
-## APIs
-[Random Word API](https://rapidapi.com/sheharyar566/api/random-words5)
-[Dictionary API](https://rapidapi.com/twinword/api/word-dictionary)
+## APIs Used
+
+- [Random Word API](https://rapidapi.com/sheharyar566/api/random-words5)
+- [Dictionary API](https://rapidapi.com/twinword/api/word-dictionary)
 
 ## Dependencies
 
